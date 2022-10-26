@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_const_constructors, use_build_context_synchronously
-// ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:template/myState.dart';
-import 'AddToDo.dart';
-import 'ItemList.dart';
+import 'addToDo.dart';
+import 'itemList.dart';
 
 void main() {
   var state = MyState();
@@ -22,20 +21,12 @@ class Todo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: TodoList());
+    return const MaterialApp(home: TodoList());
   }
 }
 
-// ignore: use_key_in_widget_constructors
-class TodoList extends StatefulWidget {
-  @override
-  // ignore: library_private_types_in_public_api
-  TodoListState createState() => TodoListState();
-}
-
-class TodoListState extends State<TodoList> {
-  List<String> items = [];
-  TextEditingController itemController = TextEditingController();
+class TodoList extends StatelessWidget {
+  const TodoList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +59,7 @@ class TodoListState extends State<TodoList> {
       ),
       body: Consumer<MyState>(
         builder: (context, state, child) =>
-            ItemList(state.itemlist, state.filter),
+            ItemList(state.itemList, state.filter),
       ),
     );
   }

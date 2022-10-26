@@ -1,7 +1,7 @@
-// ignore_for_file: file_names
+//ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'InternetFetcher.dart';
+import 'internetFetcher.dart';
 
 class Item {
   String? id;
@@ -18,10 +18,9 @@ class Item {
 }
 
 class MyState extends ChangeNotifier {
-  static List<Item> items = [];
-  TextEditingController itemController = TextEditingController();
+  List<Item> items = [];
 
-  List<Item> get itemlist {
+  List<Item> get itemList {
     return items;
   }
 

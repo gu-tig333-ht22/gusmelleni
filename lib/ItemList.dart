@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, file_names
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,13 +9,13 @@ class ItemList extends StatelessWidget {
 
   final String filter;
 
-  ItemList(this.items, this.filter);
+  const ItemList(this.items, this.filter, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         itemBuilder: (context, index) => listItems(context, items[index]),
-        padding: EdgeInsets.fromLTRB(4, 15, 0, 0),
+        padding: const EdgeInsets.fromLTRB(4, 15, 0, 0),
         scrollDirection: Axis.vertical,
         itemCount: items.length);
   }
@@ -24,8 +23,8 @@ class ItemList extends StatelessWidget {
 
 Widget listItems(context, item) {
   return (Container(
-      padding: EdgeInsets.all(6.5),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(6.5),
+      decoration: const BoxDecoration(
           border: Border(
               bottom: BorderSide(color: Color.fromARGB(90, 48, 47, 47)))),
       child: Row(
@@ -47,7 +46,7 @@ Widget listItems(context, item) {
               style: TextStyle(
                   fontSize: 25,
                   decoration: item.done ? TextDecoration.lineThrough : null)),
-          Spacer(),
+          const Spacer(),
           IconButton(
               onPressed: () {
                 var state = Provider.of<MyState>(context, listen: false);

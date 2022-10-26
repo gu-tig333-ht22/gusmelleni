@@ -1,24 +1,21 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'myState.dart';
 import 'main.dart';
 
-class AddToDo extends StatefulWidget {
+/*class AddToDo extends StatefulWidget {
   final Item item;
-  AddToDo(this.item);
+  const AddToDo(this.item, {super.key});
 
   @override
   State<AddToDo> createState() => AddToDoState();
-}
+}*/
 
-class AddToDoState extends State<AddToDo> {
-  static List<String> items = [];
-  TextEditingController itemController = TextEditingController();
-
-  List<String> get itemlist {
-    return items;
-  }
+class AddToDo extends StatelessWidget {
+  AddToDo(this.item, {super.key});
+  final Item item;
+  final TextEditingController itemController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +25,10 @@ class AddToDoState extends State<AddToDo> {
             onPressed: () {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                return Todo();
+                return const Todo();
               }));
             },
-            icon: Icon(Icons.arrow_back_ios, color: Colors.black)),
+            icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         backgroundColor: Colors.grey[400],
         centerTitle: true,
         title: const Text(
@@ -41,12 +38,12 @@ class AddToDoState extends State<AddToDo> {
         ),
       ),
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         alignment: AlignmentDirectional.topCenter,
         child: Column(children: <Widget>[
           TextField(
               controller: itemController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(8),
                   fillColor: Colors.white,
                   enabledBorder: OutlineInputBorder(
@@ -56,7 +53,7 @@ class AddToDoState extends State<AddToDo> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.fromLTRB(0, 47, 0, 0),
                 child: Icon(Icons.add),
               ),
@@ -82,7 +79,7 @@ class AddToDoState extends State<AddToDo> {
               Item(title: itemController.text.toString(), done: false));
         }
       },
-      child: Text('ADD'),
+      child: const Text('ADD'),
     );
   }
 }
