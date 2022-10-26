@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:template/myState.dart';
-import 'addToDo.dart';
-import 'itemList.dart';
+import 'package:template/my_state.dart';
+import 'add_to_do.dart';
+import 'item_list.dart';
 
 void main() {
   var state = MyState();

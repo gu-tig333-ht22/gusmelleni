@@ -1,8 +1,6 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'myState.dart';
+import 'my_state.dart';
 
 class ItemList extends StatelessWidget {
   final List<Item> items;

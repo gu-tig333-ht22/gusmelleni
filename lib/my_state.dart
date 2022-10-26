@@ -1,7 +1,5 @@
-//ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
-import 'internetFetcher.dart';
+import 'internet_fetcher.dart';
 
 class Item {
   String? id;

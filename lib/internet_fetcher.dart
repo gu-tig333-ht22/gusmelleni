@@ -1,7 +1,5 @@
-// ignore_for_file: file_names
-
 import 'package:http/http.dart' as http;
-import 'myState.dart';
+import 'my_state.dart';
 import 'dart:convert';
 
 class InternetFetcher {
