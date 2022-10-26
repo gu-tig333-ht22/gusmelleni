@@ -6,9 +6,7 @@ import 'myState.dart';
 
 class ItemList extends StatelessWidget {
   final List<Item> items;
-
   final String filter;
-
   const ItemList(this.items, this.filter, {super.key});
 
   @override

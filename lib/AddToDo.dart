@@ -4,14 +4,6 @@ import 'package:flutter/material.dart';
 import 'myState.dart';
 import 'main.dart';
 
-/*class AddToDo extends StatefulWidget {
-  final Item item;
-  const AddToDo(this.item, {super.key});
-
-  @override
-  State<AddToDo> createState() => AddToDoState();
-}*/
-
 class AddToDo extends StatelessWidget {
   AddToDo(this.item, {super.key});
   final Item item;
